@@ -1,0 +1,145 @@
+type _ImmutableObjectStorageRefillResult = 
+ record {
+   success: opt bool;
+   topped_up_amount: opt nat;
+ };
+type _ImmutableObjectStorageRefillInformation = record {
+                                                  proposed_top_up_amount:
+                                                   opt nat;};
+type _ImmutableObjectStorageCreateCertificateResult = 
+ record {
+   blob_hash: text;
+   method: text;
+ };
+type Testimonial = 
+ record {
+   avatar: opt ExternalBlob;
+   id: nat;
+   isActive: bool;
+   location: opt text;
+   name: text;
+   rating: nat;
+   "text": text;
+ };
+type SocialLink = 
+ record {
+   platform: text;
+   url: text;
+ };
+type SiteSettings = 
+ record {
+   bookingUrl: opt text;
+   contactInfo: ContactInfo;
+   footerText: text;
+   logo: opt ExternalBlob;
+   socialLinks: vec SocialLink;
+ };
+type RoomType = 
+ record {
+   amenities: vec text;
+   capacity: opt text;
+   description: text;
+   id: nat;
+   name: text;
+   pricePerNight: opt text;
+   propertyId: nat;
+   thumbnail: opt ExternalBlob;
+ };
+type Property = 
+ record {
+   amenities: vec text;
+   bookingUrl: opt text;
+   description: text;
+   heroImage: opt ExternalBlob;
+   highlights: vec text;
+   id: nat;
+   location: text;
+   name: text;
+ };
+type PolicyContent = 
+ record {
+   body: text;
+   id: nat;
+   lastUpdated: int;
+   slug: text;
+   title: text;
+ };
+type HeroSlide = 
+ record {
+   caption: opt text;
+   id: nat;
+   image: ExternalBlob;
+   order: nat;
+ };
+type GalleryImage = 
+ record {
+   caption: opt text;
+   category: opt text;
+   id: nat;
+   image: ExternalBlob;
+   order: nat;
+ };
+type ExternalBlob = blob;
+type ContactInfo = 
+ record {
+   address: text;
+   email: text;
+   phone: text;
+   whatsapp: opt text;
+ };
+type AboutUsContent = 
+ record {
+   content: text;
+   mission: opt text;
+   teamImage: opt ExternalBlob;
+   title: text;
+   vision: opt text;
+ };
+service : {
+  __contentState: () -> (reserved) query;
+  _immutableObjectStorageBlobsAreLive: (hashes: vec blob) -> (vec bool) query;
+  _immutableObjectStorageBlobsToDelete: () -> (vec blob) query;
+  _immutableObjectStorageConfirmBlobDeletion: (blobs: vec blob) -> ();
+  _immutableObjectStorageCreateCertificate: (blobHash: text) ->
+   (_ImmutableObjectStorageCreateCertificateResult);
+  _immutableObjectStorageRefillCashier: (refillInformation:
+   opt _ImmutableObjectStorageRefillInformation) ->
+   (_ImmutableObjectStorageRefillResult);
+  _immutableObjectStorageUpdateGatewayPrincipals: () -> ();
+  addGalleryImage: (image: GalleryImage, email: text, password: text) -> ();
+  addHeroSlide: (slide: HeroSlide, email: text, password: text) -> ();
+  addProperty: (property: Property, email: text, password: text) -> ();
+  addRoomType: (room: RoomType, email: text, password: text) -> ();
+  addTestimonial: (testimonial: Testimonial, email: text, password: text) ->
+   ();
+  getAboutUs: () -> (AboutUsContent) query;
+  getAllTestimonials: (email: text, password: text) -> (vec Testimonial);
+  getGalleryImages: () -> (vec GalleryImage) query;
+  getHeroSlides: () -> (vec HeroSlide) query;
+  getNextId: () -> (nat) query;
+  getPolicies: () -> (vec PolicyContent) query;
+  getPolicyBySlug: (slug: text) -> (opt PolicyContent) query;
+  getProperties: () -> (vec Property) query;
+  getRoomTypes: () -> (vec RoomType) query;
+  getRoomTypesByProperty: (propertyId: nat) -> (vec RoomType) query;
+  getSiteSettings: () -> (SiteSettings) query;
+  getTestimonials: () -> (vec Testimonial) query;
+  login: (email: text, password: text) -> (bool);
+  removeGalleryImage: (id: nat, email: text, password: text) -> ();
+  removeHeroSlide: (id: nat, email: text, password: text) -> ();
+  removeProperty: (id: nat, email: text, password: text) -> ();
+  removeRoomType: (id: nat, email: text, password: text) -> ();
+  removeTestimonial: (id: nat, email: text, password: text) -> ();
+  setAboutUs: (content: AboutUsContent, email: text, password: text) -> ();
+  setPolicy: (policy: PolicyContent, email: text, password: text) -> ();
+  setSiteSettings: (settings: SiteSettings, email: text, password: text) ->
+   ();
+  updateGalleryImage: (image: GalleryImage, email: text, password: text) ->
+   ();
+  updateHeroSlide: (slide: HeroSlide, email: text, password: text) -> ();
+  updateProperty: (property: Property, email: text, password: text) -> ();
+  updateRoomType: (room: RoomType, email: text, password: text) -> ();
+  updateTestimonial: (testimonial: Testimonial, email: text, password:
+   text) -> ();
+  verifyAdmin: (email: text, password: text) -> (bool) query;
+}

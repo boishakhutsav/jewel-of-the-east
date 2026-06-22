@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/assets/fonts/JetBrainsMono.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtM.woff2")
+    format("woff2");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-display: "Playfair Display", "Lora", serif;
+    --font-body: "Satoshi", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+    --radius: 0.5rem;
+
+    --background: 0.18 0.04 155;
+    --foreground: 0.96 0.01 80;
+    --card: 0.98 0.005 80;
+    --card-foreground: 0.18 0.02 50;
+    --popover: 0.22 0.03 155;
+    --popover-foreground: 0.96 0.01 80;
+
+    --primary: 0.35 0.08 155;
+    --primary-foreground: 0.98 0.005 80;
+
+    --secondary: 0.22 0.03 155;
+    --secondary-foreground: 0.85 0.01 80;
+    --muted: 0.22 0.03 155;
+    --muted-foreground: 0.65 0.02 80;
+
+    --accent: 0.72 0.15 80;
+    --accent-foreground: 0.18 0.02 50;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 25;
+
+    --border: 0.28 0.03 155;
+    --input: 0.28 0.03 155;
+    --ring: 0.72 0.15 80;
+
+    --chart-1: 0.35 0.08 155;
+    --chart-2: 0.72 0.15 80;
+    --chart-3: 0.6 0.15 170;
+    --chart-4: 0.55 0.18 150;
+    --chart-5: 0.75 0.15 85;
+
+    --sidebar: 0.22 0.03 155;
+    --sidebar-foreground: 0.96 0.01 80;
+    --sidebar-primary: 0.72 0.15 80;
+    --sidebar-primary-foreground: 0.18 0.02 50;
+    --sidebar-accent: 0.28 0.03 155;
+    --sidebar-accent-foreground: 0.85 0.01 80;
+    --sidebar-border: 0.28 0.03 155;
+    --sidebar-ring: 0.72 0.15 80;
+
+    --success: 0.6 0.16 150;
+    --warning: 0.72 0.15 85;
+  }
+
+  .dark {
+    --background: 0.12 0.02 155;
+    --foreground: 0.92 0.01 80;
+    --card: 0.18 0.022 155;
+    --card-foreground: 0.92 0.01 80;
+    --popover: 0.18 0.022 155;
+    --popover-foreground: 0.92 0.01 80;
+
+    --primary: 0.65 0.18 155;
+    --primary-foreground: 0.12 0.02 155;
+
+    --secondary: 0.21 0.025 155;
+    --secondary-foreground: 0.82 0.01 150;
+    --muted: 0.21 0.025 155;
+    --muted-foreground: 0.52 0.015 155;
+
+    --accent: 0.7 0.12 85;
+    --accent-foreground: 0.13 0.02 85;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.92 0.01 25;
+
+    --border: 0.26 0.022 155;
+    --input: 0.26 0.022 155;
+    --ring: 0.65 0.18 155;
+
+    --chart-1: 0.65 0.18 155;
+    --chart-2: 0.7 0.12 85;
+    --chart-3: 0.6 0.15 170;
+    --chart-4: 0.55 0.18 150;
+    --chart-5: 0.75 0.15 85;
+
+    --sidebar: 0.18 0.022 155;
+    --sidebar-foreground: 0.92 0.01 80;
+    --sidebar-primary: 0.65 0.18 155;
+    --sidebar-primary-foreground: 0.12 0.02 155;
+    --sidebar-accent: 0.21 0.025 155;
+    --sidebar-accent-foreground: 0.82 0.01 150;
+    --sidebar-border: 0.26 0.022 155;
+    --sidebar-ring: 0.65 0.18 155;
+
+    --success: 0.6 0.16 150;
+    --warning: 0.72 0.15 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@theme {
+  --color-background: oklch(var(--background));
+  --color-foreground: oklch(var(--foreground));
+  --color-card: oklch(var(--card));
+  --color-card-foreground: oklch(var(--card-foreground));
+  --color-popover: oklch(var(--popover));
+  --color-popover-foreground: oklch(var(--popover-foreground));
+  --color-primary: oklch(var(--primary));
+  --color-primary-foreground: oklch(var(--primary-foreground));
+  --color-secondary: oklch(var(--secondary));
+  --color-secondary-foreground: oklch(var(--secondary-foreground));
+  --color-muted: oklch(var(--muted));
+  --color-muted-foreground: oklch(var(--muted-foreground));
+  --color-accent: oklch(var(--accent));
+  --color-accent-foreground: oklch(var(--accent-foreground));
+  --color-destructive: oklch(var(--destructive));
+  --color-destructive-foreground: oklch(var(--destructive-foreground));
+  --color-border: oklch(var(--border));
+  --color-input: oklch(var(--input));
+  --color-ring: oklch(var(--ring));
+  --color-success: oklch(var(--success));
+  --color-warning: oklch(var(--warning));
+}
+
+.gradient-primary {
+  background: linear-gradient(
+    135deg,
+    oklch(var(--primary)),
+    oklch(var(--accent))
+  );
+}
+
+.gradient-subtle {
+  background: linear-gradient(
+    180deg,
+    oklch(var(--background)),
+    oklch(var(--card))
+  );
+}
+
+.shadow-elevated {
+  box-shadow: 0 20px 40px -12px oklch(0.2 0.02 50 / 0.15);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 16px -4px oklch(0.2 0.02 50 / 0.08);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.image-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.section-alt {
+  background-color: #0b2b1b;
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px oklch(var(--accent) / 0.25);
+}
+
+.shadow-hotel-hero {
+  box-shadow: inset 0 -80px 80px -40px oklch(var(--background));
+}
+
+.border-gold {
+  border-color: oklch(var(--accent));
+}
+
+.bg-hero-overlay {
+  background: linear-gradient(
+    180deg,
+    oklch(0.14 0.015 50 / 0.25) 0%,
+    oklch(0.14 0.015 50 / 0.75) 100%
+  );
+}
+
+.shadow-hero {
+  box-shadow: 0 20px 60px -16px oklch(0.1 0.02 155 / 0.3);
+}
+
+/* Crossfade text title animation utilities */
+.crossfade-text {
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s
+    cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.crossfade-text-enter {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+}
+
+.crossfade-text-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.crossfade-text-exit {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.crossfade-text-exit-active {
+  opacity: 0;
+  transform: translateY(-12px) scale(0.98);
+}
+
+/* Full-width un-bordered media frame */
+.media-frame {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.media-frame img,
+.media-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bg-himalayan-emerald {
+  background-color: #0b2b1b;
+}
+
+.bg-misty-pearl {
+  background-color: #fdfbf7;
+}
+
+.text-gold {
+  color: #c9a96e;
+}
+
+.font-editorial {
+  font-family: "Playfair Display", "Lora", serif;
+}

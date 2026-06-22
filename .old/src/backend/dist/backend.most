@@ -1,0 +1,636 @@
+// Version: 4.0.0
+type AboutUsContent__976025065 =
+  {
+    content : Text;
+    mission : ?Text;
+    teamImage : ?ExternalBlob__365673026;
+    title : Text;
+    vision : ?Text
+  };
+type ContactInfo__961202325 =
+  {address : Text; email : Text; phone : Text; whatsapp : ?Text};
+type Data__80296667<K, V> =
+  {var count : Nat__1040412405; kvs : [var ?(K, V)]};
+type ExternalBlob__365673026 = Blob;
+type GalleryImage__712802670 =
+  {
+    caption : ?Text;
+    category : ?Text;
+    id : Nat;
+    image : ExternalBlob__365673026;
+    order : Nat
+  };
+type HeroSlide__72308354 =
+  {caption : ?Text; id : Nat; image : ExternalBlob__365673026; order : Nat};
+type Internal__41346355<K, V> =
+  {children : [var ?Node__1000929467<K, V>]; data : Data__80296667<K, V>};
+type Leaf__712614010<K, V> = {data : Data__80296667<K, V>};
+type List__529703492<T> =
+  {
+    var blockIndex : Nat__1040412405;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__1040412405
+  };
+type List__560604548<T> = List__529703492<T>;
+type Map__222667396<K, V> = Map__912772452<K, V>;
+type Map__709709801<K, V> =
+  {var root : Node__1000929467<K, V>; var size : Nat__1040412405};
+type Map__912772452<K, V> = Map__709709801<K, V>;
+type Nat__1040412405 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__277487213 =
+  {
+    var accessControlState :
+      {
+        var adminAssigned : Bool;
+        userRoles : Map__222667396<Principal, UserRole__423778884>
+      };
+    var contentState :
+      {
+        var aboutUs :
+          {
+            content : Text;
+            mission : ?Text;
+            teamImage : ?ExternalBlob__365673026;
+            title : Text;
+            vision : ?Text
+          };
+        var galleryImages :
+          List__560604548<{
+                            caption : ?Text;
+                            category : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var heroSlides :
+          List__560604548<{
+                            caption : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var nextId : Nat;
+        var properties :
+          List__560604548<{
+                            amenities : [Text];
+                            bookingUrl : ?Text;
+                            description : Text;
+                            heroImage : ?ExternalBlob__365673026;
+                            highlights : [Text];
+                            id : Nat;
+                            name : Text
+                          }>;
+        var roomTypes :
+          List__560604548<{
+                            amenities : [Text];
+                            capacity : ?Text;
+                            description : Text;
+                            id : Nat;
+                            name : Text;
+                            pricePerNight : ?Text;
+                            propertyId : Nat;
+                            thumbnail : ?ExternalBlob__365673026
+                          }>;
+        var siteSettings :
+          {
+            bookingUrl : ?Text;
+            contactInfo :
+              {address : Text; email : Text; phone : Text; whatsapp : ?Text};
+            footerText : Text;
+            logo : ?ExternalBlob__365673026;
+            socialLinks : [{platform : Text; url : Text}]
+          };
+        var testimonials :
+          List__560604548<{
+                            avatar : ?ExternalBlob__365673026;
+                            id : Nat;
+                            isActive : Bool;
+                            location : ?Text;
+                            name : Text;
+                            rating : Nat;
+                            text : Text
+                          }>
+      }
+  };
+type NewActor__331594679 =
+  {
+    var contentState :
+      {
+        var aboutUs :
+          {
+            content : Text;
+            mission : ?Text;
+            teamImage : ?ExternalBlob__365673026;
+            title : Text;
+            vision : ?Text
+          };
+        var galleryImages :
+          List__560604548<{
+                            caption : ?Text;
+                            category : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var heroSlides :
+          List__560604548<{
+                            caption : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var nextId : Nat;
+        var policies :
+          List__560604548<{
+                            body : Text;
+                            id : Nat;
+                            lastUpdated : Int;
+                            slug : Text;
+                            title : Text
+                          }>;
+        var properties :
+          List__560604548<{
+                            amenities : [Text];
+                            bookingUrl : ?Text;
+                            description : Text;
+                            heroImage : ?ExternalBlob__365673026;
+                            highlights : [Text];
+                            id : Nat;
+                            location : Text;
+                            name : Text
+                          }>;
+        var roomTypes :
+          List__560604548<{
+                            amenities : [Text];
+                            capacity : ?Text;
+                            description : Text;
+                            id : Nat;
+                            name : Text;
+                            pricePerNight : ?Text;
+                            propertyId : Nat;
+                            thumbnail : ?ExternalBlob__365673026
+                          }>;
+        var siteSettings :
+          {
+            bookingUrl : ?Text;
+            contactInfo :
+              {address : Text; email : Text; phone : Text; whatsapp : ?Text};
+            footerText : Text;
+            logo : ?ExternalBlob__365673026;
+            socialLinks : [{platform : Text; url : Text}]
+          };
+        var testimonials :
+          List__560604548<{
+                            avatar : ?ExternalBlob__365673026;
+                            id : Nat;
+                            isActive : Bool;
+                            location : ?Text;
+                            name : Text;
+                            rating : Nat;
+                            text : Text
+                          }>
+      }
+  };
+type NewActor__689976535 =
+  {
+    var contentState :
+      {
+        var aboutUs :
+          {
+            content : Text;
+            mission : ?Text;
+            teamImage : ?ExternalBlob__365673026;
+            title : Text;
+            vision : ?Text
+          };
+        var galleryImages :
+          List__560604548<{
+                            caption : ?Text;
+                            category : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var heroSlides :
+          List__560604548<{
+                            caption : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var nextId : Nat;
+        var policies :
+          List__560604548<{
+                            body : Text;
+                            id : Nat;
+                            lastUpdated : Int;
+                            slug : Text;
+                            title : Text
+                          }>;
+        var properties :
+          List__560604548<{
+                            amenities : [Text];
+                            bookingUrl : ?Text;
+                            description : Text;
+                            heroImage : ?ExternalBlob__365673026;
+                            highlights : [Text];
+                            id : Nat;
+                            name : Text
+                          }>;
+        var roomTypes :
+          List__560604548<{
+                            amenities : [Text];
+                            capacity : ?Text;
+                            description : Text;
+                            id : Nat;
+                            name : Text;
+                            pricePerNight : ?Text;
+                            propertyId : Nat;
+                            thumbnail : ?ExternalBlob__365673026
+                          }>;
+        var siteSettings :
+          {
+            bookingUrl : ?Text;
+            contactInfo :
+              {address : Text; email : Text; phone : Text; whatsapp : ?Text};
+            footerText : Text;
+            logo : ?ExternalBlob__365673026;
+            socialLinks : [{platform : Text; url : Text}]
+          };
+        var testimonials :
+          List__560604548<{
+                            avatar : ?ExternalBlob__365673026;
+                            id : Nat;
+                            isActive : Bool;
+                            location : ?Text;
+                            name : Text;
+                            rating : Nat;
+                            text : Text
+                          }>
+      }
+  };
+type NewActor__971995762 =
+  {
+    var contentState :
+      {
+        var aboutUs :
+          {
+            content : Text;
+            mission : ?Text;
+            teamImage : ?ExternalBlob__365673026;
+            title : Text;
+            vision : ?Text
+          };
+        var galleryImages :
+          List__560604548<{
+                            caption : ?Text;
+                            category : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var heroSlides :
+          List__560604548<{
+                            caption : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var nextId : Nat;
+        var properties :
+          List__560604548<{
+                            amenities : [Text];
+                            bookingUrl : ?Text;
+                            description : Text;
+                            heroImage : ?ExternalBlob__365673026;
+                            highlights : [Text];
+                            id : Nat;
+                            name : Text
+                          }>;
+        var roomTypes :
+          List__560604548<{
+                            amenities : [Text];
+                            capacity : ?Text;
+                            description : Text;
+                            id : Nat;
+                            name : Text;
+                            pricePerNight : ?Text;
+                            propertyId : Nat;
+                            thumbnail : ?ExternalBlob__365673026
+                          }>;
+        var siteSettings :
+          {
+            bookingUrl : ?Text;
+            contactInfo :
+              {address : Text; email : Text; phone : Text; whatsapp : ?Text};
+            footerText : Text;
+            logo : ?ExternalBlob__365673026;
+            socialLinks : [{platform : Text; url : Text}]
+          };
+        var testimonials :
+          List__560604548<{
+                            avatar : ?ExternalBlob__365673026;
+                            id : Nat;
+                            isActive : Bool;
+                            location : ?Text;
+                            name : Text;
+                            rating : Nat;
+                            text : Text
+                          }>
+      }
+  };
+type Node__1000929467<K, V> =
+  {#internal : Internal__41346355<K, V>; #leaf : Leaf__712614010<K, V>};
+type OldActor__419442665 =
+  {
+    var contentState :
+      {
+        var aboutUs :
+          {
+            content : Text;
+            mission : ?Text;
+            teamImage : ?ExternalBlob__365673026;
+            title : Text;
+            vision : ?Text
+          };
+        var galleryImages :
+          List__560604548<{
+                            caption : ?Text;
+                            category : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var heroSlides :
+          List__560604548<{
+                            caption : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var nextId : Nat;
+        var policies :
+          List__560604548<{
+                            body : Text;
+                            id : Nat;
+                            lastUpdated : Int;
+                            slug : Text;
+                            title : Text
+                          }>;
+        var properties :
+          List__560604548<{
+                            amenities : [Text];
+                            bookingUrl : ?Text;
+                            description : Text;
+                            heroImage : ?ExternalBlob__365673026;
+                            highlights : [Text];
+                            id : Nat;
+                            name : Text
+                          }>;
+        var roomTypes :
+          List__560604548<{
+                            amenities : [Text];
+                            capacity : ?Text;
+                            description : Text;
+                            id : Nat;
+                            name : Text;
+                            pricePerNight : ?Text;
+                            propertyId : Nat;
+                            thumbnail : ?ExternalBlob__365673026
+                          }>;
+        var siteSettings :
+          {
+            bookingUrl : ?Text;
+            contactInfo :
+              {address : Text; email : Text; phone : Text; whatsapp : ?Text};
+            footerText : Text;
+            logo : ?ExternalBlob__365673026;
+            socialLinks : [{platform : Text; url : Text}]
+          };
+        var testimonials :
+          List__560604548<{
+                            avatar : ?ExternalBlob__365673026;
+                            id : Nat;
+                            isActive : Bool;
+                            location : ?Text;
+                            name : Text;
+                            rating : Nat;
+                            text : Text
+                          }>
+      }
+  };
+type OldActor__531157147 = {};
+type OldActor__532990806 =
+  {
+    var contentState :
+      {
+        var aboutUs :
+          {
+            content : Text;
+            mission : ?Text;
+            teamImage : ?ExternalBlob__365673026;
+            title : Text;
+            vision : ?Text
+          };
+        var galleryImages :
+          List__560604548<{
+                            caption : ?Text;
+                            category : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var heroSlides :
+          List__560604548<{
+                            caption : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var nextId : Nat;
+        var properties :
+          List__560604548<{
+                            amenities : [Text];
+                            bookingUrl : ?Text;
+                            description : Text;
+                            heroImage : ?ExternalBlob__365673026;
+                            highlights : [Text];
+                            id : Nat;
+                            name : Text
+                          }>;
+        var roomTypes :
+          List__560604548<{
+                            amenities : [Text];
+                            capacity : ?Text;
+                            description : Text;
+                            id : Nat;
+                            name : Text;
+                            pricePerNight : ?Text;
+                            propertyId : Nat;
+                            thumbnail : ?ExternalBlob__365673026
+                          }>;
+        var siteSettings :
+          {
+            bookingUrl : ?Text;
+            contactInfo :
+              {address : Text; email : Text; phone : Text; whatsapp : ?Text};
+            footerText : Text;
+            logo : ?ExternalBlob__365673026;
+            socialLinks : [{platform : Text; url : Text}]
+          };
+        var testimonials :
+          List__560604548<{
+                            avatar : ?ExternalBlob__365673026;
+                            id : Nat;
+                            isActive : Bool;
+                            location : ?Text;
+                            name : Text;
+                            rating : Nat;
+                            text : Text
+                          }>
+      }
+  };
+type OldActor__763464973 =
+  {
+    var accessControlState :
+      {
+        var adminAssigned : Bool;
+        userRoles : Map__222667396<Principal, {#admin; #guest; #user}>
+      };
+    var contentState :
+      {
+        var aboutUs :
+          {
+            content : Text;
+            mission : ?Text;
+            teamImage : ?ExternalBlob__365673026;
+            title : Text;
+            vision : ?Text
+          };
+        var galleryImages :
+          List__560604548<{
+                            caption : ?Text;
+                            category : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var heroSlides :
+          List__560604548<{
+                            caption : ?Text;
+                            id : Nat;
+                            image : ExternalBlob__365673026;
+                            order : Nat
+                          }>;
+        var nextId : Nat;
+        var properties :
+          List__560604548<{
+                            amenities : [Text];
+                            bookingUrl : ?Text;
+                            description : Text;
+                            heroImage : ?ExternalBlob__365673026;
+                            highlights : [Text];
+                            id : Nat;
+                            name : Text
+                          }>;
+        var roomTypes :
+          List__560604548<{
+                            amenities : [Text];
+                            capacity : ?Text;
+                            description : Text;
+                            id : Nat;
+                            name : Text;
+                            pricePerNight : ?Text;
+                            propertyId : Nat;
+                            thumbnail : ?ExternalBlob__365673026
+                          }>;
+        var siteSettings :
+          {
+            bookingUrl : ?Text;
+            contactInfo :
+              {address : Text; email : Text; phone : Text; whatsapp : ?Text};
+            footerText : Text;
+            logo : ?ExternalBlob__365673026;
+            socialLinks : [{platform : Text; url : Text}]
+          };
+        var testimonials :
+          List__560604548<{
+                            avatar : ?ExternalBlob__365673026;
+                            id : Nat;
+                            isActive : Bool;
+                            location : ?Text;
+                            name : Text;
+                            rating : Nat;
+                            text : Text
+                          }>
+      }
+  };
+type PolicyContent__124483207 =
+  {body : Text; id : Nat; lastUpdated : Int; slug : Text; title : Text};
+type Property__874972874 =
+  {
+    amenities : [Text];
+    bookingUrl : ?Text;
+    description : Text;
+    heroImage : ?ExternalBlob__365673026;
+    highlights : [Text];
+    id : Nat;
+    location : Text;
+    name : Text
+  };
+type RoomType__360098483 =
+  {
+    amenities : [Text];
+    capacity : ?Text;
+    description : Text;
+    id : Nat;
+    name : Text;
+    pricePerNight : ?Text;
+    propertyId : Nat;
+    thumbnail : ?ExternalBlob__365673026
+  };
+type SiteSettings__523338558 =
+  {
+    bookingUrl : ?Text;
+    contactInfo : ContactInfo__961202325;
+    footerText : Text;
+    logo : ?ExternalBlob__365673026;
+    socialLinks : [SocialLink__698988189]
+  };
+type SocialLink__698988189 = {platform : Text; url : Text};
+type Testimonial__126880530 =
+  {
+    avatar : ?ExternalBlob__365673026;
+    id : Nat;
+    isActive : Bool;
+    location : ?Text;
+    name : Text;
+    rating : Nat;
+    text : Text
+  };
+type UserRole__423778884 = {#admin; #guest; #user};
+{
+  "20260620_000000_Initial" :
+    (old : OldActor__531157147) -> NewActor__277487213;
+  "20260621_000000_RemoveAuthorization" :
+    (old : OldActor__763464973) -> NewActor__971995762;
+  "20260621_120000_AddPolicies" :
+    (old : OldActor__532990806) -> NewActor__689976535;
+  "20260621_180000_AddPropertyLocation" :
+    (old : OldActor__419442665) -> NewActor__331594679
+}
+actor  {
+  stable contentState :
+    {
+      var aboutUs : AboutUsContent__976025065;
+      var galleryImages : List__560604548<GalleryImage__712802670>;
+      var heroSlides : List__560604548<HeroSlide__72308354>;
+      var nextId : Nat;
+      var policies : List__560604548<PolicyContent__124483207>;
+      var properties : List__560604548<Property__874972874>;
+      var roomTypes : List__560604548<RoomType__360098483>;
+      var siteSettings : SiteSettings__523338558;
+      var testimonials : List__560604548<Testimonial__126880530>
+    }
+};
