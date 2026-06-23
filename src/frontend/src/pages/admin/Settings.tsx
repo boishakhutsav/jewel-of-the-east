@@ -17,7 +17,7 @@ import {
   Upload,
 } from "lucide-react";
 import { motion } from "motion/react";
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function SocialLinkEditor({
   links,
@@ -123,7 +123,7 @@ export default function SettingsManager() {
   });
   const [hasChanges, setHasChanges] = useState(false);
 
-  const initForm = (s: SiteSettings) => {
+  const initForm = useCallback((s: SiteSettings) => {
     setForm({
       footerText: s.footerText,
       contactInfo: { ...s.contactInfo },
@@ -132,7 +132,7 @@ export default function SettingsManager() {
       logo: s.logo,
     });
     setHasChanges(false);
-  };
+  }, []);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -159,16 +159,21 @@ export default function SettingsManager() {
     setHasChanges(false);
   };
 
+  const [initialized, setInitialized] = useState(false);
+
+  useEffect(() => {
+    if (settings && !initialized) {
+      initForm(settings);
+      setInitialized(true);
+    }
+  }, [settings, initialized, initForm]);
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center py-12">
         <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
       </div>
     );
-  }
-
-  if (settings && !hasChanges && form.footerText === "") {
-    initForm(settings);
   }
 
   const updateField = <K extends keyof SiteSettings>(

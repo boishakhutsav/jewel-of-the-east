@@ -1,7 +1,7 @@
-import { aq as usePolicies, ar as useUpdatePolicy, r as reactExports, j as jsxRuntimeExports, m as motion, C as Card, a as CardContent, B as Button, D as Label, E as Input } from "./index-DR0Be3dU.js";
-import { S as Shield } from "./shield-DVk1Bhsh.js";
-import { F as FileText } from "./file-text-BLiP1zYL.js";
-import { S as Save } from "./save-B9o1_I_V.js";
+import { aq as usePolicies, ar as useUpdatePolicy, r as reactExports, j as jsxRuntimeExports, m as motion, C as Card, a as CardContent, B as Button, D as Label, E as Input } from "./index-BUTaEtEs.js";
+import { S as Shield } from "./shield-CRVKEkAD.js";
+import { F as FileText } from "./file-text-DyEU1EHV.js";
+import { S as Save } from "./save-BcvWBMUK.js";
 const POLICY_SLUGS = [
   { slug: "privacy", label: "Privacy Policy", defaultTitle: "Privacy Policy" },
   {

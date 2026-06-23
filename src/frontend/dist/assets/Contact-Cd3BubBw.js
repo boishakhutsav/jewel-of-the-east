@@ -1,4 +1,4 @@
-import { o as useSiteSettings, j as jsxRuntimeExports, m as motion } from "./index-DR0Be3dU.js";
+import { o as useSiteSettings, j as jsxRuntimeExports, m as motion } from "./index-BUTaEtEs.js";
 function ContactPage() {
   const { data: settings, isLoading } = useSiteSettings();
   settings == null ? void 0 : settings.contactInfo;

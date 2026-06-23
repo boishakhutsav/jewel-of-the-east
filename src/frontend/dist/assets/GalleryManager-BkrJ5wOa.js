@@ -1,4 +1,4 @@
-import { G as useGalleryImages, a1 as useAddGalleryImage, a2 as useRemoveGalleryImage, S as useImageUpload, T as useImagePreview, r as reactExports, j as jsxRuntimeExports, U as Dialog, V as DialogTrigger, B as Button, W as Plus, Y as DialogContent, Z as DialogHeader, _ as DialogTitle, D as Label, E as Input, $ as Upload, I as Image, m as motion, C as Card, a0 as Trash2, a as CardContent } from "./index-DR0Be3dU.js";
+import { G as useGalleryImages, a1 as useAddGalleryImage, a2 as useRemoveGalleryImage, S as useImageUpload, T as useImagePreview, r as reactExports, j as jsxRuntimeExports, U as Dialog, V as DialogTrigger, B as Button, W as Plus, Y as DialogContent, Z as DialogHeader, _ as DialogTitle, D as Label, E as Input, $ as Upload, I as Image, m as motion, C as Card, a0 as Trash2, a as CardContent } from "./index-BUTaEtEs.js";
 function GalleryManager() {
   const { data: images = [], isLoading } = useGalleryImages();
   const addImage = useAddGalleryImage();

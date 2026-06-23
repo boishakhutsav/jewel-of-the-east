@@ -1,6 +1,6 @@
-import { ap as usePolicy, j as jsxRuntimeExports, m as motion } from "./index-DR0Be3dU.js";
-function BookingPolicyPage() {
-  const { data: policy, isLoading } = usePolicy("booking-policy");
+import { ap as usePolicy, j as jsxRuntimeExports, m as motion } from "./index-BUTaEtEs.js";
+function PrivacyPolicyPage() {
+  const { data: policy, isLoading } = usePolicy("privacy");
   if (isLoading) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "min-h-[50vh] flex items-center justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" }) });
   }
@@ -17,7 +17,7 @@ function BookingPolicyPage() {
         animate: { opacity: 1, y: 0 },
         className: "text-center mb-4",
         children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "font-display text-4xl md:text-5xl font-bold text-[#FDFBF7] mb-4", children: (policy == null ? void 0 : policy.title) ?? "Booking & Refund Policy" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: "font-display text-4xl md:text-5xl font-bold text-[#FDFBF7] mb-4", children: (policy == null ? void 0 : policy.title) ?? "Privacy Policy" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-20 h-1 bg-[#c9a96e] mx-auto rounded-full mb-4" }),
           lastUpdated && /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "text-sm text-[#FDFBF7]/70", children: [
             "Last updated: ",
@@ -34,12 +34,12 @@ function BookingPolicyPage() {
         transition: { delay: 0.1 },
         className: "prose prose-lg max-w-none text-[#0B2B1B]",
         dangerouslySetInnerHTML: {
-          __html: (policy == null ? void 0 : policy.body) ?? "<p>Our booking and refund policy will be updated soon. Please check back later.</p>"
+          __html: (policy == null ? void 0 : policy.body) ?? "<p>Our privacy policy will be updated soon. Please check back later.</p>"
         }
       }
     ) }) })
   ] });
 }
 export {
-  BookingPolicyPage as default
+  PrivacyPolicyPage as default
 };

@@ -1,7 +1,7 @@
-import { c as createLucideIcon, o as useSiteSettings, an as useUpdateSiteSettings, S as useImageUpload, T as useImagePreview, r as reactExports, j as jsxRuntimeExports, m as motion, C as Card, a as CardContent, $ as Upload, E as Input, D as Label, p as Phone, ao as Mail, B as Button } from "./index-DR0Be3dU.js";
-import { T as Textarea } from "./textarea-C9Ukw41Y.js";
-import { M as MessageCircle } from "./message-circle-DJGtmcIf.js";
-import { S as Save } from "./save-B9o1_I_V.js";
+import { c as createLucideIcon, o as useSiteSettings, an as useUpdateSiteSettings, S as useImageUpload, T as useImagePreview, r as reactExports, j as jsxRuntimeExports, m as motion, C as Card, a as CardContent, $ as Upload, E as Input, D as Label, p as Phone, ao as Mail, B as Button } from "./index-BUTaEtEs.js";
+import { T as Textarea } from "./textarea-CrNcM90R.js";
+import { M as MessageCircle } from "./message-circle-BXklpOs2.js";
+import { S as Save } from "./save-BcvWBMUK.js";
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -135,7 +135,7 @@ function SettingsManager() {
     socialLinks: []
   });
   const [hasChanges, setHasChanges] = reactExports.useState(false);
-  const initForm = (s) => {
+  const initForm = reactExports.useCallback((s) => {
     setForm({
       footerText: s.footerText,
       contactInfo: { ...s.contactInfo },
@@ -144,7 +144,7 @@ function SettingsManager() {
       logo: s.logo
     });
     setHasChanges(false);
-  };
+  }, []);
   const handleFileChange = async (e) => {
     var _a;
     const file = (_a = e.target.files) == null ? void 0 : _a[0];
@@ -168,11 +168,15 @@ function SettingsManager() {
     if (fileInputRef.current) fileInputRef.current.value = "";
     setHasChanges(false);
   };
+  const [initialized, setInitialized] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    if (settings && !initialized) {
+      initForm(settings);
+      setInitialized(true);
+    }
+  }, [settings, initialized, initForm]);
   if (isLoading) {
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex items-center justify-center py-12", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" }) });
-  }
-  if (settings && !hasChanges && form.footerText === "") {
-    initForm(settings);
   }
   const updateField = (key, value) => {
     setForm((f) => ({ ...f, [key]: value }));

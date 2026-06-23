@@ -1,7 +1,7 @@
-import { q as useAboutUs, am as useUpdateAboutUs, r as reactExports, j as jsxRuntimeExports, B as Button, m as motion, C as Card, a as CardContent, D as Label, E as Input } from "./index-DR0Be3dU.js";
-import { T as Textarea } from "./textarea-C9Ukw41Y.js";
-import { F as FileText } from "./file-text-BLiP1zYL.js";
-import { S as Save } from "./save-B9o1_I_V.js";
+import { q as useAboutUs, am as useUpdateAboutUs, r as reactExports, j as jsxRuntimeExports, B as Button, m as motion, C as Card, a as CardContent, D as Label, E as Input } from "./index-BUTaEtEs.js";
+import { T as Textarea } from "./textarea-CrNcM90R.js";
+import { F as FileText } from "./file-text-DyEU1EHV.js";
+import { S as Save } from "./save-BcvWBMUK.js";
 function AboutUsManager() {
   const { data: aboutUs, isLoading } = useAboutUs();
   const updateAboutUs = useUpdateAboutUs();

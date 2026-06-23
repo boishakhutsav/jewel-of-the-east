@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-CA3elZkG.js","assets/arrow-right-BjiyAAP2.js","assets/hotels-BX_FS5aX.js","assets/star-D2kfnEQ2.js","assets/message-circle-DJGtmcIf.js","assets/About-C3lt9MRC.js","assets/shield-DVk1Bhsh.js","assets/HotelGangtok-BZbtp4gQ.js","assets/HotelPageLayout-qkLVtBiK.js","assets/badge-bPHkpC3i.js","assets/HotelLachung-cf_czpCn.js","assets/AdminLayout-BUGDeFA5.js","assets/settings-CUpk-MMp.js","assets/file-text-BLiP1zYL.js","assets/Dashboard-HvFnFFJb.js","assets/Properties-C88ZJRfm.js","assets/textarea-C9Ukw41Y.js","assets/square-pen-ziOpfNRK.js","assets/save-B9o1_I_V.js","assets/RoomTypes-DaNhn2c5.js","assets/Testimonials-DuAR8eZI.js","assets/AboutUs-BRcCU8Va.js","assets/Settings-BnWmaJOj.js","assets/Policies-DQVtWR9u.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/Home-CMvEtbkO.js","assets/arrow-right-CLhjdbT1.js","assets/hotels-BX_FS5aX.js","assets/star-BDNPa5_W.js","assets/message-circle-BXklpOs2.js","assets/About-BkEgiOfU.js","assets/shield-CRVKEkAD.js","assets/HotelGangtok-CSZWi4do.js","assets/HotelPageLayout-nLCZYtjG.js","assets/badge-CcbdzArL.js","assets/HotelLachung-DXHBJz3Z.js","assets/AdminLayout-DPL1MpKK.js","assets/settings-CUJomGGe.js","assets/file-text-DyEU1EHV.js","assets/Dashboard-CdN2D4rx.js","assets/Properties-CZQOyAVS.js","assets/textarea-CrNcM90R.js","assets/square-pen-B4lgfc0E.js","assets/save-BcvWBMUK.js","assets/RoomTypes-B6ME382k.js","assets/Testimonials-DkMQjK6O.js","assets/AboutUs-D1v0cHBf.js","assets/Settings-BllIDk2A.js","assets/Policies-BdhVLaG3.js"])))=>i.map(i=>d[i]);
 var __defProp = Object.defineProperty;
 var __typeError = (msg) => {
   throw TypeError(msg);
@@ -34226,7 +34226,7 @@ function createActor(canisterId, _uploadFile, _downloadFile, options = {}) {
   });
   return new Backend(actor, _uploadFile, _downloadFile, options.processError);
 }
-const __vite_import_meta_env__ = { "BASE_URL": "/", "DEV": false, "MODE": "production", "PROD": true, "SSR": false, "VITE_CANISTER_ID": "d6nn2-7aaaa-aaaai-atmxq-cai" };
+const __vite_import_meta_env__ = { "BASE_URL": "/", "DEV": false, "MODE": "production", "PROD": true, "SSR": false, "VITE_CANISTER_ID": "aaaaa-aa" };
 var define_process_env_default = {};
 const CANISTER_ID_KEYS = [
   "VITE_CANISTER_ID",
@@ -51808,24 +51808,24 @@ function PropertyGalleryManager() {
     )) })
   ] });
 }
-const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-CA3elZkG.js"), true ? __vite__mapDeps([0,1,2,3,4]) : void 0));
-const AboutPage = reactExports.lazy(() => __vitePreload(() => import("./About-C3lt9MRC.js"), true ? __vite__mapDeps([5,6]) : void 0));
-const HotelGangtokPage = reactExports.lazy(() => __vitePreload(() => import("./HotelGangtok-BZbtp4gQ.js"), true ? __vite__mapDeps([7,8,9,3,1,4,2]) : void 0));
-const HotelLachungPage = reactExports.lazy(() => __vitePreload(() => import("./HotelLachung-cf_czpCn.js"), true ? __vite__mapDeps([10,8,9,3,1,4,2]) : void 0));
-const ContactPage = reactExports.lazy(() => __vitePreload(() => import("./Contact-tSvevfso.js"), true ? [] : void 0));
-const AdminLayout = reactExports.lazy(() => __vitePreload(() => import("./AdminLayout-BUGDeFA5.js"), true ? __vite__mapDeps([11,12,13,6]) : void 0));
-const AdminDashboard = reactExports.lazy(() => __vitePreload(() => import("./Dashboard-HvFnFFJb.js"), true ? __vite__mapDeps([14,12,13,6,1]) : void 0));
-const AdminHero = reactExports.lazy(() => __vitePreload(() => import("./HeroCarousel-OsFWu2YR.js"), true ? [] : void 0));
-const AdminGallery = reactExports.lazy(() => __vitePreload(() => import("./GalleryManager-DoGr5QT7.js"), true ? [] : void 0));
-const AdminProperties = reactExports.lazy(() => __vitePreload(() => import("./Properties-C88ZJRfm.js"), true ? __vite__mapDeps([15,9,16,17,18]) : void 0));
-const AdminRoomTypes = reactExports.lazy(() => __vitePreload(() => import("./RoomTypes-DaNhn2c5.js"), true ? __vite__mapDeps([19,16,17,18]) : void 0));
-const AdminTestimonials = reactExports.lazy(() => __vitePreload(() => import("./Testimonials-DuAR8eZI.js"), true ? __vite__mapDeps([20,16,3,17,18]) : void 0));
-const AdminAbout = reactExports.lazy(() => __vitePreload(() => import("./AboutUs-BRcCU8Va.js"), true ? __vite__mapDeps([21,16,13,18]) : void 0));
-const AdminSettings = reactExports.lazy(() => __vitePreload(() => import("./Settings-BnWmaJOj.js"), true ? __vite__mapDeps([22,16,4,18]) : void 0));
-const PrivacyPolicyPage = reactExports.lazy(() => __vitePreload(() => import("./PrivacyPolicy-D1weD6Mi.js"), true ? [] : void 0));
-const TermsConditionsPage = reactExports.lazy(() => __vitePreload(() => import("./TermsConditions-DQ9c6LWX.js"), true ? [] : void 0));
-const BookingPolicyPage = reactExports.lazy(() => __vitePreload(() => import("./BookingPolicy-UdQfR0HL.js"), true ? [] : void 0));
-const AdminPolicies = reactExports.lazy(() => __vitePreload(() => import("./Policies-DQVtWR9u.js"), true ? __vite__mapDeps([23,6,13,18]) : void 0));
+const HomePage = reactExports.lazy(() => __vitePreload(() => import("./Home-CMvEtbkO.js"), true ? __vite__mapDeps([0,1,2,3,4]) : void 0));
+const AboutPage = reactExports.lazy(() => __vitePreload(() => import("./About-BkEgiOfU.js"), true ? __vite__mapDeps([5,6]) : void 0));
+const HotelGangtokPage = reactExports.lazy(() => __vitePreload(() => import("./HotelGangtok-CSZWi4do.js"), true ? __vite__mapDeps([7,8,9,3,1,4,2]) : void 0));
+const HotelLachungPage = reactExports.lazy(() => __vitePreload(() => import("./HotelLachung-DXHBJz3Z.js"), true ? __vite__mapDeps([10,8,9,3,1,4,2]) : void 0));
+const ContactPage = reactExports.lazy(() => __vitePreload(() => import("./Contact-Cd3BubBw.js"), true ? [] : void 0));
+const AdminLayout = reactExports.lazy(() => __vitePreload(() => import("./AdminLayout-DPL1MpKK.js"), true ? __vite__mapDeps([11,12,13,6]) : void 0));
+const AdminDashboard = reactExports.lazy(() => __vitePreload(() => import("./Dashboard-CdN2D4rx.js"), true ? __vite__mapDeps([14,12,13,6,1]) : void 0));
+const AdminHero = reactExports.lazy(() => __vitePreload(() => import("./HeroCarousel-CM3NKl16.js"), true ? [] : void 0));
+const AdminGallery = reactExports.lazy(() => __vitePreload(() => import("./GalleryManager-BkrJ5wOa.js"), true ? [] : void 0));
+const AdminProperties = reactExports.lazy(() => __vitePreload(() => import("./Properties-CZQOyAVS.js"), true ? __vite__mapDeps([15,9,16,17,18]) : void 0));
+const AdminRoomTypes = reactExports.lazy(() => __vitePreload(() => import("./RoomTypes-B6ME382k.js"), true ? __vite__mapDeps([19,16,17,18]) : void 0));
+const AdminTestimonials = reactExports.lazy(() => __vitePreload(() => import("./Testimonials-DkMQjK6O.js"), true ? __vite__mapDeps([20,16,3,17,18]) : void 0));
+const AdminAbout = reactExports.lazy(() => __vitePreload(() => import("./AboutUs-D1v0cHBf.js"), true ? __vite__mapDeps([21,16,13,18]) : void 0));
+const AdminSettings = reactExports.lazy(() => __vitePreload(() => import("./Settings-BllIDk2A.js"), true ? __vite__mapDeps([22,16,4,18]) : void 0));
+const PrivacyPolicyPage = reactExports.lazy(() => __vitePreload(() => import("./PrivacyPolicy-xzac32-8.js"), true ? [] : void 0));
+const TermsConditionsPage = reactExports.lazy(() => __vitePreload(() => import("./TermsConditions-DvnRNP2f.js"), true ? [] : void 0));
+const BookingPolicyPage = reactExports.lazy(() => __vitePreload(() => import("./BookingPolicy-B3axm8F7.js"), true ? [] : void 0));
+const AdminPolicies = reactExports.lazy(() => __vitePreload(() => import("./Policies-BdhVLaG3.js"), true ? __vite__mapDeps([23,6,13,18]) : void 0));
 function AdminGuard({ children }) {
   const { isAdmin, isLoading } = useAuth();
   if (isLoading) {
