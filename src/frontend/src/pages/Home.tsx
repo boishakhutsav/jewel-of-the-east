@@ -44,8 +44,9 @@ function HeroCarousel() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B2B1B]/80 via-[#0B2B1B]/30 to-[#0B2B1B]/20" />
 
+      {/* Cross-fading text slides — centered */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center px-4 max-w-3xl w-full">
+        <div className="text-center px-4 max-w-3xl w-full relative h-full">
           {slides.map((slide, i) => (
             <div
               key={slide.title}
@@ -58,44 +59,45 @@ function HeroCarousel() {
               <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-[#FDFBF7] drop-shadow-2xl tracking-tight leading-tight">
                 {slide.title}
               </h1>
-              <p className="text-lg md:text-xl text-[#FDFBF7]/90 max-w-xl mx-auto mb-8 font-body">
+              <p className="text-lg md:text-xl text-[#FDFBF7]/90 max-w-xl mx-auto font-body">
                 {slide.subtitle}
               </p>
             </div>
           ))}
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap gap-3 justify-center mt-8"
-          >
-            <Link
-              to="/hotels/jewel-himalayan-heights"
-              data-ocid="home.hero.gangtok_button"
-            >
-              <Button
-                size="lg"
-                className="bg-[#c9a96e] text-[#0B2B1B] hover:bg-[#c9a96e]/90 font-semibold"
-              >
-                Explore Gangtok
-              </Button>
-            </Link>
-            <Link
-              to="/hotels/jewel-kongchen-retreat"
-              data-ocid="home.hero.lachung_button"
-            >
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#FDFBF7] text-[#FDFBF7] hover:bg-[#FDFBF7]/20"
-              >
-                Explore Lachung
-              </Button>
-            </Link>
-          </motion.div>
         </div>
       </div>
+
+      {/* Buttons anchored at the bottom of the hero image */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="absolute bottom-20 left-0 right-0 flex flex-wrap gap-3 justify-center px-4"
+      >
+        <Link
+          to="/hotels/jewel-himalayan-heights"
+          data-ocid="home.hero.gangtok_button"
+        >
+          <Button
+            size="lg"
+            className="bg-[#c9a96e] text-[#0B2B1B] hover:bg-[#c9a96e]/90 font-semibold"
+          >
+            Explore Gangtok
+          </Button>
+        </Link>
+        <Link
+          to="/hotels/jewel-kongchen-retreat"
+          data-ocid="home.hero.lachung_button"
+        >
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-[#FDFBF7] text-[#FDFBF7] hover:bg-[#FDFBF7]/20"
+          >
+            Explore Lachung
+          </Button>
+        </Link>
+      </motion.div>
 
       {/* Slide indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">

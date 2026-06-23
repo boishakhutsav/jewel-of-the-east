@@ -235,9 +235,11 @@ function FacilitiesSection({ amenities }: { amenities: string[] }) {
 function RoomTypesSection({
   roomTypes,
   bookingUrl,
+  contactPhone,
 }: {
   roomTypes: HardcodedHotel["roomTypes"];
   bookingUrl?: string;
+  contactPhone?: string;
 }) {
   return (
     <section className="py-16 bg-[#0B2B1B]">
@@ -282,6 +284,12 @@ function RoomTypesSection({
                   <div className="absolute top-4 right-4 bg-[#c9a96e] text-[#0B2B1B] px-3 py-1 rounded-full text-sm font-semibold">
                     {room.price}
                   </div>
+                  {room.price === "Contact Us" && (
+                    <div className="absolute bottom-4 left-4 bg-[#0B2B1B]/80 backdrop-blur-sm text-[#FDFBF7] px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5">
+                      <Phone className="size-3" />
+                      <span>Call {contactPhone}</span>
+                    </div>
+                  )}
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
                   <h3 className="font-editorial font-semibold text-[#0B2B1B] text-xl mb-2">
@@ -314,10 +322,12 @@ function RoomTypesSection({
                   <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#0B2B1B]/10">
                     <div>
                       <span className="text-xs text-[#0B2B1B]/50 uppercase tracking-wider">
-                        per night
+                        {room.price === "Contact Us"
+                          ? "Enquire for pricing"
+                          : "per night"}
                       </span>
                     </div>
-                    {bookingUrl && (
+                    {bookingUrl && room.price !== "Contact Us" && (
                       <a
                         href={bookingUrl}
                         target="_blank"
@@ -329,6 +339,21 @@ function RoomTypesSection({
                           className="bg-[#c9a96e] text-[#0B2B1B] hover:bg-[#c9a96e]/90 rounded-full px-6"
                         >
                           Book Now
+                        </Button>
+                      </a>
+                    )}
+                    {room.price === "Contact Us" && contactPhone && (
+                      <a
+                        href={`tel:${contactPhone}`}
+                        data-ocid={`hotel.room.${i + 1}.phone_button`}
+                      >
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="border-[#0B2B1B]/30 text-[#0B2B1B] hover:bg-[#0B2B1B]/10 rounded-full px-6"
+                        >
+                          <Phone className="size-3.5 mr-1.5" />
+                          Call Now
                         </Button>
                       </a>
                     )}
@@ -718,6 +743,7 @@ export default function HotelPageLayout({
         <RoomTypesSection
           roomTypes={hotel.roomTypes}
           bookingUrl={hotel.bookingUrl}
+          contactPhone={hotel.contactPhone}
         />
       )}
       {hotel.nearbyAttractions.length > 0 && (

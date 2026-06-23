@@ -47,10 +47,7 @@ export const jewelHimalayanHeights: HardcodedHotel = {
 <p>All our rooms feature premium room heaters to ensure your comfort during the chilly Himalayan nights. The hotel features an elevator for easy access to all floors, 24-hour power backup, and a multi-cuisine restaurant serving delicious local Sikkimese and international dishes. Our friendly staff is dedicated to making your stay comfortable and memorable.</p>
 <p>Located just a short walk from MG Marg, Gangtok's famous shopping and dining street, and close to major attractions like the Flower Exhibition Centre and Chogyal Memorial Park, Jewel Himalayan Heights is the ideal base for exploring the beauty of Sikkim. Enjoy local dining options right at your doorstep and wake up to stunning Kanchenjunga sunrise views from your room.</p>`,
   image: "/assets/jewel-himalayan-heights-new.jpg",
-  gallery: [
-    "/assets/images/hero-static.jpg",
-    "/assets/generated/hotel-gangtok-hero.dim_1200x600.jpg",
-  ],
+  gallery: [],
   amenities: [
     "All Rooms Heated",
     "Elevator",
@@ -80,38 +77,30 @@ export const jewelHimalayanHeights: HardcodedHotel = {
   roomTypes: [
     {
       id: 101,
-      name: "Superior Family Room",
-      description:
-        "Spacious family room with a king-size bed and a single bed, perfect for families of 3-4. Features a private balcony with mountain views, centrally heated, and modern amenities.",
-      price: "₹4,500",
-      image: "/assets/images/hero-static.jpg",
-      amenities: ["Mountain View", "Heater", "WiFi", "TV", "Balcony"],
-      capacity: "3 Adults",
-    },
-    {
-      id: 102,
       name: "Studio Balcony Room",
       description:
         "Our signature room with a private balcony offering panoramic mountain views. Features a comfortable queen bed, modern furnishings, and all essential amenities for a relaxing stay.",
       price: "₹5,500",
-      image: "/assets/generated/hotel-gangtok-hero.dim_1200x600.jpg",
+      image:
+        "https://static.wixstatic.com/media/fa2477_66a114220473482996dbcc0807cb7508~mv2.jpeg/v1/fill/w_306,h_226,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Studio%20Balcony%20Room.jpeg",
       amenities: ["Balcony", "Mountain View", "Heater", "WiFi", "TV"],
       capacity: "2 Adults",
     },
     {
-      id: 103,
-      name: "Deluxe Room",
+      id: 102,
+      name: "Banquet / Event Hall",
       description:
-        "Elegant deluxe room with premium furnishings, a large comfortable bed, and a sitting area. Ideal for couples or solo travelers seeking extra comfort and luxury.",
-      price: "₹6,500",
-      image: "/assets/images/hero-static.jpg",
-      amenities: ["Premium View", "Heater", "WiFi", "TV", "Mini Fridge"],
-      capacity: "2 Adults",
+        "With a capacity of 80 persons, our hall provides ample space for meetings, conferences, social events, etc.",
+      price: "Contact Us",
+      image:
+        "https://static.wixstatic.com/media/fa2477_5ecaafd3956a48c59937c3a75a8f55a7~mv2.jpg/v1/fill/w_306,h_226,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Meeting%20Hall.jpg",
+      amenities: ["80 Persons", "Conference", "Social Events", "Meetings"],
+      capacity: "80 Persons",
     },
   ],
-  contactPhone: "+91-97330-09777",
+  contactPhone: "+919831206897",
   contactEmail: "info@jeweloftheeastgroup.com",
-  contactWhatsApp: "919733009777",
+  contactWhatsApp: "919831206897",
   bookingUrl: "https://himalayanheightshoteljeweloftheeastgroup.bookmystay.io/",
   nearbyAttractions: [
     { name: "Children's Park", distance: "0.13 km" },
@@ -255,10 +244,7 @@ export const jewelKongchenRetreat: HardcodedHotel = {
 <p>All our rooms are centrally heated and feature round-the-clock hot water systems to keep you comfortable in the high-altitude climate. The retreat features a rejuvenating spa, an elevator for convenience, robust backup power infrastructure, and the Asiatic Grill restaurant & bar serving delectable local and continental cuisine. Our attentive staff ensures every guest feels at home in this remote paradise.</p>
 <p>Located close to the famous Yumthang Valley (Valley of Flowers), Zero Point, and the ancient Lachung Monastery, Jewel Kongchen Retreat is the perfect gateway to explore the untouched beauty of North Sikkim.</p>`,
   image: "/assets/jewel-kongchen-retreat-new.jpg",
-  gallery: [
-    "/assets/generated/hotel-lachung-hero.dim_1200x600.jpg",
-    "/assets/images/hero-static.jpg",
-  ],
+  gallery: [],
   amenities: [
     "All Rooms Heated",
     "Elevator",
@@ -294,7 +280,8 @@ export const jewelKongchenRetreat: HardcodedHotel = {
       description:
         "Spacious family room designed for comfort in the high-altitude climate. Features a king-size bed, additional single bed, mountain views, and spa access.",
       price: "₹4,500",
-      image: "/assets/generated/hotel-lachung-hero.dim_1200x600.jpg",
+      image:
+        "https://static.wixstatic.com/media/fa2477_4917de633bd34b118d5335974ec36b67~mv2.jpeg/v1/fill/w_306,h_226,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Family%20Room%20in%20Lachung.jpeg",
       amenities: ["Mountain View", "Heater", "WiFi", "TV", "Spa Access"],
       capacity: "3 Adults",
     },
@@ -304,7 +291,8 @@ export const jewelKongchenRetreat: HardcodedHotel = {
       description:
         "Cozy studio room with a private balcony overlooking the Lachung River and snow-capped peaks. Perfect for couples seeking a romantic Himalayan getaway.",
       price: "₹5,500",
-      image: "/assets/images/hero-static.jpg",
+      image:
+        "https://static.wixstatic.com/media/fa2477_2f6b05042fef448480338b72d2f2d2e7~mv2.jpeg/v1/crop/x_78,y_0,w_1443,h_1066/fill/w_306,h_226,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Balcony%20Room.jpeg",
       amenities: ["Balcony", "River View", "Heater", "WiFi", "TV"],
       capacity: "2 Adults",
     },
@@ -314,14 +302,15 @@ export const jewelKongchenRetreat: HardcodedHotel = {
       description:
         "Premium deluxe room with elegant furnishings, a large comfortable bed, and panoramic mountain views. Includes complimentary spa session.",
       price: "₹6,500",
-      image: "/assets/generated/hotel-lachung-hero.dim_1200x600.jpg",
+      image:
+        "https://static.wixstatic.com/media/fa2477_635abf9f070b41738f13050b0ac1287c~mv2.jpeg/v1/fill/w_306,h_226,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Deluxe%20Room.jpeg",
       amenities: ["Premium View", "Heater", "WiFi", "TV", "Spa Session"],
       capacity: "2 Adults",
     },
   ],
-  contactPhone: "+91-97330-09777",
+  contactPhone: "+919831206897",
   contactEmail: "info@jeweloftheeastgroup.com",
-  contactWhatsApp: "919733009777",
+  contactWhatsApp: "919831206897",
   bookingUrl: "https://jewelkongchenretreatspa.bookmystay.io/",
   nearbyAttractions: [
     { name: "Lachung Monastery", distance: "0.5 km" },

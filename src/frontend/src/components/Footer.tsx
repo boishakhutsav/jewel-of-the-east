@@ -26,9 +26,9 @@ const hotels = [
 ];
 
 const phoneNumbers = [
-  { label: "9831206897", href: "tel:9831206897" },
-  { label: "8240293982", href: "tel:8240293982" },
-  { label: "7602028800", href: "tel:7602028800" },
+  { label: "+919831206897", href: "tel:+919831206897" },
+  { label: "+918240293982", href: "tel:+918240293982" },
+  { label: "+917602028800", href: "tel:+917602028800" },
 ];
 
 export default function Footer() {

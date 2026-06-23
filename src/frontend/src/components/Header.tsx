@@ -30,19 +30,11 @@ export default function Header() {
           className="flex items-center gap-3 shrink-0"
           data-ocid="header.logo_link"
         >
-          {settings?.logo ? (
-            <img
-              src={settings.logo.getDirectURL()}
-              alt="Jewel of the East"
-              className="h-10 w-auto object-contain"
-            />
-          ) : (
-            <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-display text-lg font-bold">
-                J
-              </span>
-            </div>
-          )}
+          <img
+            src="https://ik.imagekit.io/hotelzifyprod/filename_c255ea26-2f5f-4d08-9872-36f238693998.png"
+            alt="Jewel of the East"
+            className="h-10 w-auto object-contain"
+          />
           <span className="font-display text-lg font-semibold text-[#FDFBF7] hidden sm:inline tracking-wide">
             Jewel of the East
           </span>

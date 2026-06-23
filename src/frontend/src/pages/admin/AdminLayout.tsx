@@ -78,11 +78,11 @@ export default function AdminLayout() {
         <div className="p-4 border-b flex items-center gap-3">
           <Link to="/" data-ocid="admin.sidebar.logo_link">
             <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold">
-                  J
-                </span>
-              </div>
+              <img
+                src="https://ik.imagekit.io/hotelzifyprod/filename_c255ea26-2f5f-4d08-9872-36f238693998.png"
+                alt="Jewel of the East"
+                className="h-8 w-auto object-contain"
+              />
               <span className="font-display font-semibold text-foreground">
                 Admin
               </span>
@@ -152,11 +152,11 @@ export default function AdminLayout() {
         <div className="p-4 border-b flex items-center justify-between">
           <Link to="/" onClick={() => setSidebarOpen(false)}>
             <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold">
-                  J
-                </span>
-              </div>
+              <img
+                src="https://ik.imagekit.io/hotelzifyprod/filename_c255ea26-2f5f-4d08-9872-36f238693998.png"
+                alt="Jewel of the East"
+                className="h-8 w-auto object-contain"
+              />
               <span className="font-display font-semibold text-foreground">
                 Admin
               </span>
