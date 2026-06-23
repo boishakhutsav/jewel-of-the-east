@@ -45,6 +45,14 @@ type RoomType =
    propertyId: nat;
    thumbnail: opt ExternalBlob;
  };
+type PropertyGalleryImage = 
+ record {
+   caption: opt text;
+   id: nat;
+   image: ExternalBlob;
+   order: nat;
+   propertyId: text;
+ };
 type Property = 
  record {
    amenities: vec text;
@@ -109,6 +117,8 @@ service : {
   addGalleryImage: (image: GalleryImage, email: text, password: text) -> ();
   addHeroSlide: (slide: HeroSlide, email: text, password: text) -> ();
   addProperty: (property: Property, email: text, password: text) -> ();
+  addPropertyGalleryImage: (image: PropertyGalleryImage, email: text,
+   password: text) -> ();
   addRoomType: (room: RoomType, email: text, password: text) -> ();
   addTestimonial: (testimonial: Testimonial, email: text, password: text) ->
    ();
@@ -120,6 +130,8 @@ service : {
   getPolicies: () -> (vec PolicyContent) query;
   getPolicyBySlug: (slug: text) -> (opt PolicyContent) query;
   getProperties: () -> (vec Property) query;
+  getPropertyGalleryImages: (propertyId: text) ->
+   (vec PropertyGalleryImage) query;
   getRoomTypes: () -> (vec RoomType) query;
   getRoomTypesByProperty: (propertyId: nat) -> (vec RoomType) query;
   getSiteSettings: () -> (SiteSettings) query;
@@ -128,6 +140,7 @@ service : {
   removeGalleryImage: (id: nat, email: text, password: text) -> ();
   removeHeroSlide: (id: nat, email: text, password: text) -> ();
   removeProperty: (id: nat, email: text, password: text) -> ();
+  removePropertyGalleryImage: (id: nat, email: text, password: text) -> ();
   removeRoomType: (id: nat, email: text, password: text) -> ();
   removeTestimonial: (id: nat, email: text, password: text) -> ();
   setAboutUs: (content: AboutUsContent, email: text, password: text) -> ();

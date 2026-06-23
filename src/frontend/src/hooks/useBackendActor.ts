@@ -7,6 +7,25 @@ const CANISTER_ID_KEYS = [
   "CANISTER_ID_BACKEND",
 ];
 
+function getCanisterIdFromEnvJson(): { id: string; source: string } | null {
+  if (
+    typeof window !== "undefined" &&
+    (window as unknown as Record<string, unknown>).__ENV
+  ) {
+    const env = (window as unknown as Record<string, unknown>).__ENV as Record<
+      string,
+      string
+    >;
+    if (env.backend_canister_id && env.backend_canister_id !== "undefined") {
+      return {
+        id: env.backend_canister_id,
+        source: "window.__ENV.backend_canister_id",
+      };
+    }
+  }
+  return null;
+}
+
 function getCanisterId(): { id: string; source: string } | null {
   // Check import.meta.env (Vite)
   if (typeof import.meta !== "undefined" && import.meta.env) {
@@ -115,7 +134,10 @@ export function useBackendActor() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const result = getCanisterId();
+    let result = getCanisterId();
+    if (!result) {
+      result = getCanisterIdFromEnvJson();
+    }
     if (!result) {
       setError(getCanisterIdError());
       setIsFetching(false);

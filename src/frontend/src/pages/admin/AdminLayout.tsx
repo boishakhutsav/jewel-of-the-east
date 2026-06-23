@@ -25,6 +25,11 @@ const adminNavItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Hero Carousel", href: "/admin/hero", icon: Image },
   { label: "Gallery", href: "/admin/gallery", icon: Images },
+  {
+    label: "Property Gallery",
+    href: "/admin/property-gallery",
+    icon: Images,
+  },
   { label: "Properties", href: "/admin/properties", icon: Building2 },
   { label: "Room Types", href: "/admin/rooms", icon: BedDouble },
   {

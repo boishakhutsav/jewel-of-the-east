@@ -54,6 +54,13 @@ export interface Property {
   'bookingUrl' : [] | [string],
   'location' : string,
 }
+export interface PropertyGalleryImage {
+  'id' : bigint,
+  'order' : bigint,
+  'propertyId' : string,
+  'caption' : [] | [string],
+  'image' : ExternalBlob,
+}
 export interface RoomType {
   'id' : bigint,
   'thumbnail' : [] | [ExternalBlob],
@@ -115,6 +122,10 @@ export interface _SERVICE {
   'addGalleryImage' : ActorMethod<[GalleryImage, string, string], undefined>,
   'addHeroSlide' : ActorMethod<[HeroSlide, string, string], undefined>,
   'addProperty' : ActorMethod<[Property, string, string], undefined>,
+  'addPropertyGalleryImage' : ActorMethod<
+    [PropertyGalleryImage, string, string],
+    undefined
+  >,
   'addRoomType' : ActorMethod<[RoomType, string, string], undefined>,
   'addTestimonial' : ActorMethod<[Testimonial, string, string], undefined>,
   'getAboutUs' : ActorMethod<[], AboutUsContent>,
@@ -125,6 +136,10 @@ export interface _SERVICE {
   'getPolicies' : ActorMethod<[], Array<PolicyContent>>,
   'getPolicyBySlug' : ActorMethod<[string], [] | [PolicyContent]>,
   'getProperties' : ActorMethod<[], Array<Property>>,
+  'getPropertyGalleryImages' : ActorMethod<
+    [string],
+    Array<PropertyGalleryImage>
+  >,
   'getRoomTypes' : ActorMethod<[], Array<RoomType>>,
   'getRoomTypesByProperty' : ActorMethod<[bigint], Array<RoomType>>,
   'getSiteSettings' : ActorMethod<[], SiteSettings>,
@@ -133,6 +148,10 @@ export interface _SERVICE {
   'removeGalleryImage' : ActorMethod<[bigint, string, string], undefined>,
   'removeHeroSlide' : ActorMethod<[bigint, string, string], undefined>,
   'removeProperty' : ActorMethod<[bigint, string, string], undefined>,
+  'removePropertyGalleryImage' : ActorMethod<
+    [bigint, string, string],
+    undefined
+  >,
   'removeRoomType' : ActorMethod<[bigint, string, string], undefined>,
   'removeTestimonial' : ActorMethod<[bigint, string, string], undefined>,
   'setAboutUs' : ActorMethod<[AboutUsContent, string, string], undefined>,

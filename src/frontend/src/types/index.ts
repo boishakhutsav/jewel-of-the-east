@@ -1,9 +1,10 @@
-import type { PolicyContent } from "@/backend";
+import type { PropertyGalleryImage } from "@/backend";
 import type {
   AboutUsContent,
   ContactInfo,
   GalleryImage,
   HeroSlide,
+  PolicyContent,
   Property,
   RoomType,
   SiteSettings,
@@ -18,6 +19,7 @@ export type {
   HeroSlide,
   PolicyContent,
   Property,
+  PropertyGalleryImage,
   RoomType,
   SiteSettings,
   SocialLink,

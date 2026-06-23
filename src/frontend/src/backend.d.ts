@@ -21,6 +21,13 @@ export interface PolicyContent {
     slug: string;
     lastUpdated: bigint;
 }
+export interface PropertyGalleryImage {
+    id: bigint;
+    order: bigint;
+    propertyId: string;
+    caption?: string;
+    image: ExternalBlob;
+}
 export interface SocialLink {
     url: string;
     platform: string;
@@ -91,6 +98,7 @@ export interface backendInterface {
     addGalleryImage(image: GalleryImage, email: string, password: string): Promise<void>;
     addHeroSlide(slide: HeroSlide, email: string, password: string): Promise<void>;
     addProperty(property: Property, email: string, password: string): Promise<void>;
+    addPropertyGalleryImage(image: PropertyGalleryImage, email: string, password: string): Promise<void>;
     addRoomType(room: RoomType, email: string, password: string): Promise<void>;
     addTestimonial(testimonial: Testimonial, email: string, password: string): Promise<void>;
     getAboutUs(): Promise<AboutUsContent>;
@@ -101,6 +109,7 @@ export interface backendInterface {
     getPolicies(): Promise<Array<PolicyContent>>;
     getPolicyBySlug(slug: string): Promise<PolicyContent | null>;
     getProperties(): Promise<Array<Property>>;
+    getPropertyGalleryImages(propertyId: string): Promise<Array<PropertyGalleryImage>>;
     getRoomTypes(): Promise<Array<RoomType>>;
     getRoomTypesByProperty(propertyId: bigint): Promise<Array<RoomType>>;
     getSiteSettings(): Promise<SiteSettings>;
@@ -109,6 +118,7 @@ export interface backendInterface {
     removeGalleryImage(id: bigint, email: string, password: string): Promise<void>;
     removeHeroSlide(id: bigint, email: string, password: string): Promise<void>;
     removeProperty(id: bigint, email: string, password: string): Promise<void>;
+    removePropertyGalleryImage(id: bigint, email: string, password: string): Promise<void>;
     removeRoomType(id: bigint, email: string, password: string): Promise<void>;
     removeTestimonial(id: bigint, email: string, password: string): Promise<void>;
     setAboutUs(content: AboutUsContent, email: string, password: string): Promise<void>;

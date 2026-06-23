@@ -43,6 +43,13 @@ export const Property = IDL.Record({
   'bookingUrl' : IDL.Opt(IDL.Text),
   'location' : IDL.Text,
 });
+export const PropertyGalleryImage = IDL.Record({
+  'id' : IDL.Nat,
+  'order' : IDL.Nat,
+  'propertyId' : IDL.Text,
+  'caption' : IDL.Opt(IDL.Text),
+  'image' : ExternalBlob,
+});
 export const RoomType = IDL.Record({
   'id' : IDL.Nat,
   'thumbnail' : IDL.Opt(ExternalBlob),
@@ -125,6 +132,11 @@ export const idlService = IDL.Service({
   'addGalleryImage' : IDL.Func([GalleryImage, IDL.Text, IDL.Text], [], []),
   'addHeroSlide' : IDL.Func([HeroSlide, IDL.Text, IDL.Text], [], []),
   'addProperty' : IDL.Func([Property, IDL.Text, IDL.Text], [], []),
+  'addPropertyGalleryImage' : IDL.Func(
+      [PropertyGalleryImage, IDL.Text, IDL.Text],
+      [],
+      [],
+    ),
   'addRoomType' : IDL.Func([RoomType, IDL.Text, IDL.Text], [], []),
   'addTestimonial' : IDL.Func([Testimonial, IDL.Text, IDL.Text], [], []),
   'getAboutUs' : IDL.Func([], [AboutUsContent], ['query']),
@@ -139,6 +151,11 @@ export const idlService = IDL.Service({
   'getPolicies' : IDL.Func([], [IDL.Vec(PolicyContent)], ['query']),
   'getPolicyBySlug' : IDL.Func([IDL.Text], [IDL.Opt(PolicyContent)], ['query']),
   'getProperties' : IDL.Func([], [IDL.Vec(Property)], ['query']),
+  'getPropertyGalleryImages' : IDL.Func(
+      [IDL.Text],
+      [IDL.Vec(PropertyGalleryImage)],
+      ['query'],
+    ),
   'getRoomTypes' : IDL.Func([], [IDL.Vec(RoomType)], ['query']),
   'getRoomTypesByProperty' : IDL.Func(
       [IDL.Nat],
@@ -151,6 +168,11 @@ export const idlService = IDL.Service({
   'removeGalleryImage' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
   'removeHeroSlide' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
   'removeProperty' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
+  'removePropertyGalleryImage' : IDL.Func(
+      [IDL.Nat, IDL.Text, IDL.Text],
+      [],
+      [],
+    ),
   'removeRoomType' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
   'removeTestimonial' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
   'setAboutUs' : IDL.Func([AboutUsContent, IDL.Text, IDL.Text], [], []),
@@ -201,6 +223,13 @@ export const idlFactory = ({ IDL }) => {
     'heroImage' : IDL.Opt(ExternalBlob),
     'bookingUrl' : IDL.Opt(IDL.Text),
     'location' : IDL.Text,
+  });
+  const PropertyGalleryImage = IDL.Record({
+    'id' : IDL.Nat,
+    'order' : IDL.Nat,
+    'propertyId' : IDL.Text,
+    'caption' : IDL.Opt(IDL.Text),
+    'image' : ExternalBlob,
   });
   const RoomType = IDL.Record({
     'id' : IDL.Nat,
@@ -281,6 +310,11 @@ export const idlFactory = ({ IDL }) => {
     'addGalleryImage' : IDL.Func([GalleryImage, IDL.Text, IDL.Text], [], []),
     'addHeroSlide' : IDL.Func([HeroSlide, IDL.Text, IDL.Text], [], []),
     'addProperty' : IDL.Func([Property, IDL.Text, IDL.Text], [], []),
+    'addPropertyGalleryImage' : IDL.Func(
+        [PropertyGalleryImage, IDL.Text, IDL.Text],
+        [],
+        [],
+      ),
     'addRoomType' : IDL.Func([RoomType, IDL.Text, IDL.Text], [], []),
     'addTestimonial' : IDL.Func([Testimonial, IDL.Text, IDL.Text], [], []),
     'getAboutUs' : IDL.Func([], [AboutUsContent], ['query']),
@@ -299,6 +333,11 @@ export const idlFactory = ({ IDL }) => {
         ['query'],
       ),
     'getProperties' : IDL.Func([], [IDL.Vec(Property)], ['query']),
+    'getPropertyGalleryImages' : IDL.Func(
+        [IDL.Text],
+        [IDL.Vec(PropertyGalleryImage)],
+        ['query'],
+      ),
     'getRoomTypes' : IDL.Func([], [IDL.Vec(RoomType)], ['query']),
     'getRoomTypesByProperty' : IDL.Func(
         [IDL.Nat],
@@ -311,6 +350,11 @@ export const idlFactory = ({ IDL }) => {
     'removeGalleryImage' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
     'removeHeroSlide' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
     'removeProperty' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
+    'removePropertyGalleryImage' : IDL.Func(
+        [IDL.Nat, IDL.Text, IDL.Text],
+        [],
+        [],
+      ),
     'removeRoomType' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
     'removeTestimonial' : IDL.Func([IDL.Nat, IDL.Text, IDL.Text], [], []),
     'setAboutUs' : IDL.Func([AboutUsContent, IDL.Text, IDL.Text], [], []),

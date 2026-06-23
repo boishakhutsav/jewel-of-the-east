@@ -1,11 +1,12 @@
 import { createActor } from "@/backend";
 import { useAuth } from "@/hooks/useAuth";
 import { useBackendActor } from "@/hooks/useBackendActor";
-import type { PolicyContent } from "@/types";
+import type { PropertyGalleryImage } from "@/types";
 import type {
   AboutUsContent,
   GalleryImage,
   HeroSlide,
+  PolicyContent,
   Property,
   RoomType,
   SiteSettings,
@@ -151,6 +152,61 @@ export function useRemoveGalleryImage() {
       return actor.removeGalleryImage(id, email ?? "", password ?? "");
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ["galleryImages"] }),
+  });
+}
+
+export function usePropertyGalleryImages(propertyId: string) {
+  const { actor, isFetching } = useBackendActor();
+  return useQuery<PropertyGalleryImage[]>({
+    queryKey: ["propertyGalleryImages", propertyId],
+    queryFn: async () => {
+      if (!actor)
+        throw new Error(
+          "Actor not ready - canister ID may be missing. Check VITE_CANISTER_ID, CANISTER_ID, or CANISTER_ID_BACKEND environment variables.",
+        );
+      return actor.getPropertyGalleryImages(propertyId);
+    },
+    enabled: !!actor && !isFetching && !!propertyId,
+  });
+}
+
+export function useAddPropertyGalleryImage() {
+  const { actor } = useBackendActor();
+  const qc = useQueryClient();
+  const { email, password } = useAuth();
+  return useMutation({
+    mutationFn: async (image: PropertyGalleryImage) => {
+      if (!actor)
+        throw new Error(
+          "Actor not ready - canister ID may be missing. Check VITE_CANISTER_ID, CANISTER_ID, or CANISTER_ID_BACKEND environment variables.",
+        );
+      return actor.addPropertyGalleryImage(image, email ?? "", password ?? "");
+    },
+    onSuccess: (_data, variables) => {
+      qc.invalidateQueries({
+        queryKey: ["propertyGalleryImages", variables.propertyId],
+      });
+    },
+  });
+}
+
+export function useRemovePropertyGalleryImage() {
+  const { actor } = useBackendActor();
+  const qc = useQueryClient();
+  const { email, password } = useAuth();
+  return useMutation({
+    mutationFn: async ({ id }: { id: bigint; propertyId: string }) => {
+      if (!actor)
+        throw new Error(
+          "Actor not ready - canister ID may be missing. Check VITE_CANISTER_ID, CANISTER_ID, or CANISTER_ID_BACKEND environment variables.",
+        );
+      return actor.removePropertyGalleryImage(id, email ?? "", password ?? "");
+    },
+    onSuccess: (_data, variables) => {
+      qc.invalidateQueries({
+        queryKey: ["propertyGalleryImages", variables.propertyId],
+      });
+    },
   });
 }
 

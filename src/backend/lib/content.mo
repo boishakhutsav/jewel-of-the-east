@@ -9,6 +9,7 @@ module {
     var siteSettings : Types.SiteSettings;
     var heroSlides : List.List<Types.HeroSlide>;
     var galleryImages : List.List<Types.GalleryImage>;
+    var propertyGalleryImages : List.List<Types.PropertyGalleryImage>;
     var properties : List.List<Types.Property>;
     var roomTypes : List.List<Types.RoomType>;
     var testimonials : List.List<Types.Testimonial>;
@@ -33,6 +34,7 @@ module {
       };
       var heroSlides = List.empty<Types.HeroSlide>();
       var galleryImages = List.empty<Types.GalleryImage>();
+      var propertyGalleryImages = List.empty<Types.PropertyGalleryImage>();
       var properties = List.empty<Types.Property>();
       var roomTypes = List.empty<Types.RoomType>();
       var testimonials = List.empty<Types.Testimonial>();
@@ -97,6 +99,31 @@ module {
     let filtered = state.galleryImages.filter(func(img) { img.id != id });
     state.galleryImages := filtered;
   };
+
+  // Property Gallery Images
+  public func getPropertyGalleryImages(state : ContentState, propertyId : Text) : [Types.PropertyGalleryImage] {
+    state.propertyGalleryImages.filter(func(img) { img.propertyId == propertyId }).toArray();
+  };
+
+  public func addPropertyGalleryImage(state : ContentState, image : Types.PropertyGalleryImage) {
+    state.propertyGalleryImages.add(image);
+  };
+
+  public func removePropertyGalleryImage(state : ContentState, id : Nat) {
+    let filtered = state.propertyGalleryImages.filter(func(img) { img.id != id });
+    state.propertyGalleryImages := filtered;
+  };
+
+  public func removePropertyGalleryImageByPropertyId(state : ContentState, propertyId : Text) {
+    let filtered = state.propertyGalleryImages.filter(func(img) { img.propertyId != propertyId });
+    state.propertyGalleryImages := filtered;
+  };
+
+  public func getPropertyGalleryImageCount(state : ContentState, propertyId : Text) : Nat {
+    state.propertyGalleryImages.filter(func(img) { img.propertyId == propertyId }).size()
+  };
+
+
 
   public func getProperties(state : ContentState) : [Types.Property] {
     state.properties.toArray();

@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { useAuth } from "@/hooks/useAuth";
+import AdminPropertyGallery from "@/pages/admin/PropertyGalleryManager";
 import { Suspense, lazy } from "react";
 import {
   Navigate,
@@ -155,6 +156,14 @@ const router = createBrowserRouter([
         element: (
           <AdminGuard>
             <AdminGallery />
+          </AdminGuard>
+        ),
+      },
+      {
+        path: "property-gallery",
+        element: (
+          <AdminGuard>
+            <AdminPropertyGallery />
           </AdminGuard>
         ),
       },

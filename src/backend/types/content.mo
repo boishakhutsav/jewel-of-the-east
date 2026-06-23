@@ -29,6 +29,14 @@ module {
     order : Nat;
   };
 
+  public type PropertyGalleryImage = {
+    id : Nat;
+    propertyId : Text;
+    image : Storage.ExternalBlob;
+    caption : ?Text;
+    order : Nat;
+  };
+
   public type GalleryImage = {
     id : Nat;
     image : Storage.ExternalBlob;

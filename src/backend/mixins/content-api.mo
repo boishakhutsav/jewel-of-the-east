@@ -71,6 +71,31 @@ mixin (
     ContentLib.removeGalleryImage(contentState, id);
   };
 
+  // Property Gallery Images
+  public query func getPropertyGalleryImages(propertyId : Text) : async [Types.PropertyGalleryImage] {
+    ContentLib.getPropertyGalleryImages(contentState, propertyId);
+  };
+
+  public shared func addPropertyGalleryImage(image : Types.PropertyGalleryImage, email : Text, password : Text) : async () {
+    if (not AuthLib.verifyAdmin(email, password)) {
+      Runtime.trap("Unauthorized: Only admins can add property gallery images");
+    };
+    let count = ContentLib.getPropertyGalleryImageCount(contentState, image.propertyId);
+    if (count >= 12) {
+      Runtime.trap("Maximum 12 images per property reached");
+    };
+    let newId = ContentLib.getNextId(contentState);
+    let imageWithId = { image with id = newId };
+    ContentLib.addPropertyGalleryImage(contentState, imageWithId);
+  };
+
+  public shared func removePropertyGalleryImage(id : Nat, email : Text, password : Text) : async () {
+    if (not AuthLib.verifyAdmin(email, password)) {
+      Runtime.trap("Unauthorized: Only admins can remove property gallery images");
+    };
+    ContentLib.removePropertyGalleryImage(contentState, id);
+  };
+
   // Properties
   public query func getProperties() : async [Types.Property] {
     ContentLib.getProperties(contentState);

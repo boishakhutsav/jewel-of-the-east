@@ -1,7 +1,9 @@
+import type { PropertyGalleryImage } from "@/backend";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import type { HardcodedHotel } from "@/data/hotels";
+import { usePropertyGalleryImages } from "@/hooks/useContent";
 import {
   ArrowRight,
   Check,
@@ -17,6 +19,7 @@ import { useState } from "react";
 
 interface HotelPageLayoutProps {
   hotel: HardcodedHotel;
+  propertyId?: string;
 }
 
 function HeroSection({ hotel }: { hotel: HardcodedHotel }) {
@@ -621,8 +624,29 @@ function BookingCTASection({ hotel }: { hotel: HardcodedHotel }) {
   );
 }
 
-function GallerySection({ gallery }: { gallery: string[] }) {
-  if (gallery.length === 0) return null;
+function GallerySection({
+  gallery,
+  propertyId,
+}: {
+  gallery: string[];
+  propertyId?: string;
+}) {
+  const { data: dynamicImages = [], isLoading } = usePropertyGalleryImages(
+    propertyId ?? "",
+  );
+
+  const hasDynamicImages = dynamicImages.length > 0;
+  const displayImages: { src: string; alt: string }[] = hasDynamicImages
+    ? dynamicImages.map((img: PropertyGalleryImage, i: number) => ({
+        src: img.image.getDirectURL(),
+        alt: img.caption ?? `Gallery ${i + 1}`,
+      }))
+    : gallery.map((img, i) => ({
+        src: img,
+        alt: `Gallery ${i + 1}`,
+      }));
+
+  if (displayImages.length === 0) return null;
 
   return (
     <section className="py-16 bg-[#FDFBF7]">
@@ -642,30 +666,44 @@ function GallerySection({ gallery }: { gallery: string[] }) {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {gallery.map((img, i) => (
-            <motion.div
-              key={`gallery-${img}`}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="aspect-[4/3] rounded-xl overflow-hidden group"
-            >
-              <img
-                src={img}
-                alt={`Gallery ${i + 1}`}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        {isLoading && !hasDynamicImages ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {Array.from({ length: 4 }).map((_, _i) => (
+              <div
+                key="gallery-skeleton"
+                className="aspect-[4/3] rounded-xl bg-[#0B2B1B]/10 animate-pulse"
               />
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {displayImages.map((img, i) => (
+              <motion.div
+                key={`gallery-${img.src}-${i}`}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="aspect-[4/3] rounded-xl overflow-hidden group"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
 }
 
-export default function HotelPageLayout({ hotel }: HotelPageLayoutProps) {
+export default function HotelPageLayout({
+  hotel,
+  propertyId,
+}: HotelPageLayoutProps) {
   return (
     <div>
       <HeroSection hotel={hotel} />
@@ -673,7 +711,9 @@ export default function HotelPageLayout({ hotel }: HotelPageLayoutProps) {
       {hotel.amenities.length > 0 && (
         <FacilitiesSection amenities={hotel.amenities} />
       )}
-      {hotel.gallery.length > 0 && <GallerySection gallery={hotel.gallery} />}
+      {(hotel.gallery.length > 0 || !!propertyId) && (
+        <GallerySection gallery={hotel.gallery} propertyId={propertyId} />
+      )}
       {hotel.roomTypes.length > 0 && (
         <RoomTypesSection
           roomTypes={hotel.roomTypes}

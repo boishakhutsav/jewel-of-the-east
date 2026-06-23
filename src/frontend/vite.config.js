@@ -2,6 +2,9 @@ import { fileURLToPath, URL } from "url";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import environment from "vite-plugin-environment";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const ii_url =
   process.env.DFX_NETWORK === "local"
@@ -42,6 +45,7 @@ export default defineConfig({
     environment("all", { prefix: "DFX_" }),
     environment(["II_URL"]),
     environment(["STORAGE_GATEWAY_URL"]),
+    environment(["VITE_CANISTER_ID"]),
     react(),
   ],
   resolve: {
